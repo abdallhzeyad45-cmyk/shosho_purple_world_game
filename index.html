@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#190b35">
+<title>العالم البنفسجي | لعبة شوشو 💜</title>
+<style>
+:root{--bg:#130923;--panel:#24113f;--panel2:#321650;--pink:#ff8ed4;--lav:#c8a5ff;--gold:#ffe7a0;--text:#fff8ff;--muted:#d9c8e9;--line:#ffffff20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#713ca0 0%,#281044 38%,#10071e 78%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.star{position:absolute;border-radius:50%;background:#fff;opacity:.7;animation:twinkle 2.5s infinite alternate}@keyframes twinkle{to{opacity:.15;transform:scale(.55)}}.petal{position:fixed;top:-30px;z-index:3;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 0 8px #ff7ed4)}@keyframes fall{to{transform:translateY(110vh) rotate(520deg);opacity:.15}}
+.wrap{position:relative;z-index:1;width:min(960px,100%);margin:auto;padding:18px 14px 50px}.hero{text-align:center;padding:25px 12px 20px}.moon{font-size:42px;filter:drop-shadow(0 0 16px #d7a2ff);animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:translateY(-7px)}}h1{font-size:clamp(2rem,7vw,3.6rem);line-height:1.2;margin:8px 0;background:linear-gradient(90deg,#fff0b7,#ff9bd8,#c7a2ff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px #c67aff30}.subtitle{color:var(--muted);line-height:1.9;margin:8px auto;max-width:600px}.pill{display:inline-flex;gap:7px;align-items:center;border:1px solid #ffffff25;background:#ffffff0d;border-radius:99px;padding:7px 13px;color:#f3dfff;font-size:.88rem;margin:4px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0 18px}.stat{background:#ffffff0b;border:1px solid var(--line);border-radius:16px;text-align:center;padding:12px 5px}.stat strong{display:block;font-size:1.3rem;color:var(--gold)}.stat span{font-size:.82rem;color:var(--muted)}
+.panel{background:linear-gradient(145deg,#2a1445ee,#1c0d30f5);border:1px solid #e9caff27;border-radius:23px;padding:18px;margin:13px 0;box-shadow:0 14px 40px #0003;backdrop-filter:blur(8px)}.panel h2{margin:0 0 7px;font-size:1.3rem}.hint{color:var(--muted);font-size:.94rem;line-height:1.8;margin:5px 0 14px}.section-head{display:flex;align-items:center;gap:10px}.section-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#ffffff12;font-size:1.45rem;flex-shrink:0}
+.btn{border:0;border-radius:14px;padding:12px 16px;background:linear-gradient(100deg,#b66bff,#f27bc8);color:#230d35;font-weight:800;box-shadow:0 7px 18px #a849d733;transition:transform .15s,filter .15s}.btn:active{transform:scale(.97)}.btn.secondary{background:#ffffff12;color:var(--text);border:1px solid #ffffff25;box-shadow:none}.btn.gold{background:linear-gradient(100deg,#ffe7a0,#ffb9dc)}.btn:disabled{opacity:.4;cursor:not-allowed}.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn-row .btn{flex:1;min-width:130px}
+.world{height:220px;border-radius:19px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,#8750bc,#3b1d65 48%,#180b30);border:1px solid #ffffff20;display:grid;place-items:center}.world:before{content:"";position:absolute;bottom:-80px;left:-10%;width:120%;height:150px;background:#140a28;border-radius:50% 50% 0 0}.castle{position:relative;z-index:1;font-size:70px;filter:drop-shadow(0 0 18px #e7a7ff);animation:float 4s ease-in-out infinite}.world-caption{position:absolute;bottom:13px;z-index:2;color:#f4dcff;font-size:.86rem}
+.quest-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.quest{border:1px solid #ffffff20;background:#ffffff08;border-radius:17px;padding:13px;text-align:right;color:var(--text);min-height:130px;display:flex;flex-direction:column;gap:6px}.quest .qicon{font-size:1.65rem}.quest b{font-size:1rem}.quest small{color:var(--muted);line-height:1.6}.quest.done{border-color:#f9d88b80;background:#ffe7a012}.quest .status{font-size:.8rem;color:var(--gold);margin-top:auto}
+.gamebox{background:#160a29;border:1px solid #ffffff20;border-radius:18px;padding:15px;min-height:175px}.game-title{font-size:1.05rem;font-weight:800;margin-bottom:8px}.game-desc{color:var(--muted);line-height:1.8;font-size:.93rem}.collect-area{position:relative;overflow:hidden;min-height:205px;border-radius:15px;background:radial-gradient(circle at 50% 50%,#53267b,#24103f);margin-top:12px;border:1px solid #ffffff15}.collect-item{position:absolute;border:0;background:#ffffff13;border-radius:50%;width:51px;height:51px;font-size:26px;display:grid;place-items:center;box-shadow:0 0 18px #e780ff44;animation:bob 1.6s ease-in-out infinite alternate}.collect-item:active{transform:scale(.8)}@keyframes bob{to{translate:0 -7px}}.progress{height:9px;border-radius:99px;background:#ffffff17;overflow:hidden;margin:10px 0}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#ff8ed4,#d2a6ff,#ffe7a0);border-radius:99px;transition:width .25s}
+.options{display:grid;gap:8px;margin-top:13px}.option{background:#ffffff0c;border:1px solid #ffffff22;border-radius:13px;padding:12px;color:var(--text);text-align:right}.option:hover{background:#ffffff15}.option.correct{border-color:#9ce5bb;background:#3aab6b22}.option.wrong{border-color:#ff9cae;background:#c8496422}.feedback{min-height:26px;color:var(--gold);margin-top:10px;font-weight:700}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.memory-card{aspect-ratio:1/1;border-radius:13px;border:1px solid #ffffff24;background:linear-gradient(145deg,#4a2671,#28113e);font-size:1.7rem;color:white}.memory-card.open{background:#ffffff12}.memory-card.matched{background:#fff0c51a;border-color:#ffe7a080}
+.ending{text-align:center;padding:25px 14px}.ending .big-heart{font-size:54px;filter:drop-shadow(0 0 18px #ff81d5)}.message{font-size:1.08rem;line-height:2.1;color:#fff0ff}.signature{color:#ffbce6;font-weight:800;margin-top:10px}.footer{text-align:center;color:#ad95c4;font-size:.8rem;padding:15px 0}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:10;background:#fff0fc;color:#321344;padding:11px 16px;border-radius:14px;font-weight:800;box-shadow:0 8px 30px #0005;transition:.25s;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.hidden{display:none!important}.tiny{font-size:.8rem;color:var(--muted)}.sound-toggle{position:fixed;top:10px;left:10px;z-index:5;border:1px solid #ffffff25;background:#25103e;color:#fff;border-radius:99px;padding:8px 11px}
+@media(min-width:700px){.quest-list{grid-template-columns:repeat(4,minmax(0,1fr))}.world{height:260px}.panel{padding:22px}.collect-area{min-height:230px}}@media(max-width:380px){.quest-list{grid-template-columns:1fr}.stats{gap:5px}.stat{padding:10px 3px}.memory-grid{gap:5px}.memory-card{font-size:1.35rem}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<button class="sound-toggle" id="petalBtn" aria-label="تشغيل تأثير الورد">🌸 الورد: شغّال</button>
+<main class="wrap">
+<header class="hero">
+  <div class="moon">🌙💜</div>
+  <div class="pill">لعبة خاصة جدًا • إصدار شوشو</div>
+  <h1>العالم البنفسجي</h1>
+  <p class="subtitle">أهلًا يا شوشو! ✨<br>في عالم معمول مخصوص عشانك، كل قلب ووردة ومرحلة وراها مفاجأة صغيرة. جاهزة للمغامرة؟</p>
+  <div class="pill">🌹 ورد بنفسجي</div><div class="pill">🎮 مراحل وتحديات</div><div class="pill">🎁 أسرار مخفية</div>
+</header>
+<section class="stats" aria-label="إحصائيات اللعبة">
+  <div class="stat"><strong id="score">0</strong><span>نقاط الحب 💜</span></div>
+  <div class="stat"><strong id="level">0/4</strong><span>مراحل مكتملة</span></div>
+  <div class="stat"><strong id="roses">0</strong><span>ورود اتجمعت 🌹</span></div>
+</section>
+<section class="panel">
+  <div class="section-head"><div class="section-icon">🏰</div><div><h2>مملكة شوشو</h2><div class="tiny">كل ما تخلصي تحدي، باب جديد هيتفتح</div></div></div>
+  <div class="world"><div class="castle">🏰</div><div class="world-caption">ممنوع دخول الملل… الضحك والرومانسية بس 💜</div></div>
+  <p class="hint">مهمتك: خلّصي الأربع مراحل، اجمعي القلوب والورد، واكتشفي الرسالة السرية في نهاية الرحلة.</p>
+  <div class="progress"><div id="mainProgress"></div></div>
+  <div class="quest-list">
+    <button class="quest" data-stage="1"><span class="qicon">💗</span><b>١. لمّة القلوب</b><small>اجمعي القلوب والورد في وقتك.</small><span class="status" id="status1">🔒 لسه مقفولة</span></button>
+    <button class="quest" data-stage="2"><span class="qicon">🧩</span><b>٢. لغز شوشو</b><small>اختاري الإجابة الصح وافتحي البوابة.</small><span class="status" id="status2">🔒 لسه مقفولة</span></button>
+    <button class="quest" data-stage="3"><span class="qicon">😂</span><b>٣. اختبار الضحك</b><small>أسئلة خفيفة ومقالب لطيفة.</small><span class="status" id="status3">🔒 لسه مقفولة</span></button>
+    <button class="quest" data-stage="4"><span class="qicon">🌙</span><b>٤. ذاكرة القلوب</b><small>طابقي الرموز واكتشفي السر.</small><span class="status" id="status4">🔒 لسه مقفولة</span></button>
+  </div>
+</section>
+<section class="panel" id="playPanel">
+  <div class="section-head"><div class="section-icon" id="playIcon">🎮</div><div><h2 id="playHeading">ابدئي من هنا يا شوشو</h2><div class="tiny" id="playSub">اختاري أول مرحلة من مملكة شوشو</div></div></div>
+  <div id="welcomeGame" class="gamebox" style="margin-top:14px">
+    <div class="game-title">🎁 عندك مغامرة مستنياكي!</div>
+    <p class="game-desc">ابدئي بمرحلة لمّة القلوب. دوسي على القلوب والورود اللي بتظهر في المساحة البنفسجية، وبعدها كمّلي الألغاز والتحديات.</p>
+    <button class="btn" id="startBtn">ابدئي اللعبة 💜</button>
+  </div>
+  <div id="collectGame" class="gamebox hidden" style="margin-top:14px">
+    <div class="game-title">💗 لمّة القلوب</div><div class="game-desc">اضغطي على ٨ رموز تجمعيهم. خلي بالك، كل رمز عليه نقطة، والوردة عليها نقطتين 🌹</div>
+    <div class="progress"><div id="collectProgress"></div></div>
+    <div class="collect-area" id="collectArea" aria-label="منطقة جمع القلوب"></div>
+    <div class="feedback" id="collectFeedback">جاهزة؟ يلا نلمّ القلوب!</div>
+    <div class="btn-row"><button class="btn secondary" id="newItems">غيّري أماكن الرموز</button><button class="btn" id="finishCollect" disabled>خلصت المرحلة</button></div>
+  </div>
+  <div id="quizGame" class="gamebox hidden" style="margin-top:14px">
+    <div class="game-title" id="quizTitle">🧩 لغز شوشو</div><div class="game-desc" id="quizPrompt"></div>
+    <div class="options" id="quizOptions"></div><div class="feedback" id="quizFeedback"></div>
+    <div class="btn-row"><button class="btn hidden" id="nextQuiz">السؤال اللي بعده ←</button></div>
+  </div>
+  <div id="memoryGame" class="gamebox hidden" style="margin-top:14px">
+    <div class="game-title">🌙 ذاكرة القلوب</div><div class="game-desc">افتحي كارتين كل مرة، وحاولي تلاقي كل الرموز المتشابهة.</div>
+    <div class="memory-grid" id="memoryGrid"></div><div class="feedback" id="memoryFeedback">لسه فيه مفاجأة مستخبية…</div>
+    <div class="btn-row"><button class="btn secondary" id="resetMemory">ابدئي من جديد</button><button class="btn" id="finishMemory" disabled>افتحي الرسالة السرية</button></div>
+  </div>
+  <div id="endingGame" class="gamebox hidden ending" style="margin-top:14px">
+    <div class="big-heart">💜🌹💜</div><h2>وصلتي للنهاية يا شوشو!</h2>
+    <p class="message">وسط كل الزحمة والدوشة، حبيت أعملك حتة صغيرة كلها بنفسجي وورد وضحك… حاجة تفكّرك إنك غالية، وإن في حد بيتمنالك أيام أهدى وقلب مرتاح وفرحة من قلبك.</p>
+    <p class="message">أتمنى كل يوم جاي يكون ألطف عليكي، وكل حاجة بتتمنيها تقرّب منك، وتفضلي دايمًا شايفة النور حتى في الأيام التقيلة. 💜</p>
+    <p class="signature">كل سنة وانتي طيبة يا شوشو 🌹<br>من زياد</p>
+    <div class="btn-row"><button class="btn gold" id="surpriseBtn">اضغطي على آخر مفاجأة 🎁</button><button class="btn secondary" id="restartBtn">العبِي من الأول ↻</button></div>
+    <p id="lastSecret" class="message hidden">سر صغير: أحلى حاجة في اللعبة دي إنها اتعملت مخصوص ليكي… مش لأي حد تاني. 💜✨</p>
+  </div>
+</section>
+<section class="panel">
+  <div class="section-head"><div class="section-icon">💌</div><div><h2>رسالة من عالم شوشو</h2><div class="tiny">رسالة تظهر لما تحتاجي ابتسامة</div></div></div>
+  <p class="message" id="dailyMessage">يا شوشو، خدي نفس صغير وافتكري إن مش لازم كل حاجة تتحل النهارده. واحدة واحدة، والضحكة هترجع في وقتها. انتي تستاهلي راحة وفرحة من قلبك. 💜</p>
+  <div class="btn-row"><button class="btn secondary" id="changeMessage">رسالة تانية ✨</button><button class="btn secondary" id="makePetals">انثري الورد 🌸</button></div>
+</section>
+<footer class="footer">صُنعت بحب وورد بنفسجي مخصوص لشوشو 💜 • لعبة تعمل على الموبايل والكمبيوتر</footer>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+let score=0, roses=0, completed=new Set(), currentStage=0, collected=0, matched=0, opened=[], lockMemory=false, petalsOn=true, quizIndex=0, quizCorrect=0;
+const messages=[
+"يا شوشو، خدي نفس صغير وافتكري إن مش لازم كل حاجة تتحل النهارده. واحدة واحدة، والضحكة هترجع في وقتها. انتي تستاهلي راحة وفرحة من قلبك. 💜",
+"تنبيه رسمي من مملكة شوشو: ممنوع الزعل أكتر من اللازم، ومسموح بالضحك من غير سبب، والورد البنفسجي إجباري 🌹😂",
+"لو اليوم كان تقيل، مش معنى كده إن بكرة هيبقى زيه. ادي لنفسك فرصة وكوني حنينة على قلبك. 🌙",
+"فيه ناس وجودها بيخلّي الدنيا ألطف… والنهارده المملكة كلها بتقول لشوشو: يا رب أيامك تبقى أحنّ عليكي. 💜",
+"معلومة مهمة: انتي دلوقتي المديرة العامة للعالم البنفسجي، وأي حد يعترض يتنفى لمملكة البطاطس 😂👑"
+];
+const quizzes=[
+{q:"لو لقيتي وردة بنفسجية بتلمع في نص المملكة…",a:["أسيبها وأجري 😂","أخدها وأكمل المغامرة 🌹","أطلب منها واجب رياضة"],correct:1,why:"صح! الوردة البنفسجية مفتاح المغامرة 🌹"},
+{q:"إيه أهم قانون في مملكة شوشو؟",a:["الزعل طول اليوم","ممنوع الضحك","الراحة والضحك والورد أولًا 💜"],correct:2,why:"بالظبط! الضحك والراحة والورد أهم حاجة 😂"},
+{q:"لو الصندوق السري قالك: عندي مفاجأة…",a:["أفتحه طبعًا 🎁","أعمل نفسي مش واخدة بالي","أسأله في امتحان بكرة؟"],correct:0,why:"شوشو الشاطرة اختارت المفاجأة 🎁"}
+];
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}
+function addScore(n){score+=n;$('score').textContent=score}
+function updateProgress(){ $('level').textContent=`${completed.size}/4`; $('mainProgress').style.width=`${completed.size*25}%`; for(let i=1;i<=4;i++){ $('status'+i).textContent=completed.has(i)?'✅ خلصت المرحلة':(i===1||completed.has(i-1))?'🔓 جاهزة للعب':'🔒 لسه مقفولة'; const q=document.querySelector(`[data-stage="${i}"]`);q.classList.toggle('done',completed.has(i)); } }
+function unlock(stage){if(completed.has(stage))return;completed.add(stage);updateProgress();addScore(10);toast('برافو يا شوشو! مرحلة اتفتحت 💜');if(completed.size===4){showStage(5)}}
+function showOnly(id){['welcomeGame','collectGame','quizGame','memoryGame','endingGame'].forEach(x=>$(x).classList.add('hidden'));$(id).classList.remove('hidden')}
+function showStage(stage){currentStage=stage; if(stage===1){showOnly('collectGame');$('playHeading').textContent='لمّة القلوب 💗';$('playSub').textContent='أول خطوة في المغامرة';setupCollect()}else if(stage===2){showOnly('quizGame');quizIndex=0;quizCorrect=0;renderQuiz()}else if(stage===3){showOnly('quizGame');quizIndex=0;quizCorrect=0;renderFunnyQuiz()}else if(stage===4){showOnly('memoryGame');setupMemory()}else if(stage===5){showOnly('endingGame');$('playHeading').textContent='الرسالة السرية 💌';$('playSub').textContent='وصلتي لآخر الرحلة';}else{showOnly('welcomeGame')}}
+function setupCollect(){collected=0;$('collectProgress').style.width='0%';$('collectFeedback').textContent='دوسي على ٨ رموز عشان تكمّلي المرحلة!';$('finishCollect').disabled=true;placeItems()}
+function placeItems(){const area=$('collectArea');area.innerHTML='';const symbols=['💜','💗','🌹','✨','💖','🌸','💟','⭐','🌹','💜','💗','🌸'];symbols.sort(()=>Math.random()-.5).slice(0,8).forEach((sym,i)=>{const b=document.createElement('button');b.className='collect-item';b.textContent=sym;b.setAttribute('aria-label','اجمعي '+sym);b.style.left=(4+Math.random()*82)+'%';b.style.top=(5+Math.random()*65)+'%';b.style.animationDelay=(Math.random()*1.2)+'s';b.addEventListener('click',()=>{if(b.disabled)return;b.disabled=true;b.style.opacity='.15';b.style.transform='scale(.3)';collected++;const rose=sym==='🌹'||sym==='🌸';if(rose){roses++;$('roses').textContent=roses;addScore(2)}else addScore(1);$('collectProgress').style.width=(collected/8*100)+'%';$('collectFeedback').textContent=`جمعتِ ${collected} من ٨… كمّلي يا بطلة! ${rose?'🌹 +نقطتين':'💜 +نقطة'}`;if(collected>=8){$('finishCollect').disabled=false;$('collectFeedback').textContent='عاش يا شوشو! جمعتي كل الرموز، افتحي المرحلة اللي بعدها 💜'}});area.appendChild(b)})}
+$('startBtn').onclick=()=>showStage(1);$('newItems').onclick=placeItems;$('finishCollect').onclick=()=>{unlock(1);showStage(2)};
+function renderQuiz(){const d=quizzes[quizIndex];$('quizTitle').textContent='🧩 لغز شوشو — '+(quizIndex+1)+' من '+quizzes.length;$('quizPrompt').textContent=d.q;$('quizOptions').innerHTML='';$('quizFeedback').textContent='';$('nextQuiz').classList.add('hidden');d.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='option';b.textContent=answer;b.onclick=()=>{if([...$('quizOptions').children].some(x=>x.disabled))return;[...$('quizOptions').children].forEach(x=>x.disabled=true);if(i===d.correct){b.classList.add('correct');quizCorrect++;addScore(5);$('quizFeedback').textContent=d.why}else{b.classList.add('wrong');$('quizOptions').children[d.correct].classList.add('correct');$('quizFeedback').textContent='قريبة! الإجابة الصح ظهرت، كمّلي عادي 😄'}$('nextQuiz').classList.remove('hidden');};$('quizOptions').appendChild(b)});}
+function renderFunnyQuiz(){const funny=[{q:'اختبار مهم جدًا: لو المملكة قررت تعمل إجازة، نعمل إيه؟',a:['ننام ونفصل شوية 😴','نذاكر للمملكة','نفتح اجتماع طوارئ'],correct:0,why:'إجابة حكيمة جدًا 😂'},{q:'مين مسؤولة عن جمال العالم البنفسجي؟',a:['القطط','شوشو طبعًا 👑','الواي فاي'],correct:1,why:'المديرة وصلت! 👑💜'},{q:'الصندوق بيقولك عندي شوكولاتة وورد…',a:['أجري عليه 😂','أعمل محضر','أقوله بعدين'],correct:0,why:'قرار استراتيجي ممتاز 🍫🌹'}];const d=funny[quizIndex];$('quizTitle').textContent='😂 اختبار الضحك — '+(quizIndex+1)+' من '+funny.length;$('quizPrompt').textContent=d.q;$('quizOptions').innerHTML='';$('quizFeedback').textContent='';$('nextQuiz').classList.add('hidden');d.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='option';b.textContent=answer;b.onclick=()=>{if([...$('quizOptions').children].some(x=>x.disabled))return;[...$('quizOptions').children].forEach(x=>x.disabled=true);if(i===d.correct){b.classList.add('correct');quizCorrect++;addScore(5);$('quizFeedback').textContent=d.why}else{b.classList.add('wrong');$('quizOptions').children[d.correct].classList.add('correct');$('quizFeedback').textContent='المملكة بتقول: حاولي تاني في السؤال الجاي 😂'}$('nextQuiz').classList.remove('hidden')};$('quizOptions').appendChild(b)})}
+$('nextQuiz').onclick=()=>{quizIndex++;if(currentStage===2){if(quizIndex<quizzes.length)renderQuiz();else{unlock(2);showStage(3)}}else{if(quizIndex<3)renderFunnyQuiz();else{unlock(3);showStage(4)}}};
+const memorySymbols=['🌹','💜','🌙','✨','🌹','💜','🌙','✨'];function setupMemory(){matched=0;opened=[];lockMemory=false;$('finishMemory').disabled=true;$('memoryFeedback').textContent='طابقي كل الرموز… والسر مستنيكي!';const items=[...memorySymbols].sort(()=>Math.random()-.5);$('memoryGrid').innerHTML='';items.forEach((sym,i)=>{const b=document.createElement('button');b.className='memory-card';b.textContent='❔';b.dataset.symbol=sym;b.dataset.index=i;b.setAttribute('aria-label','كارت مخفي');b.onclick=()=>flipCard(b);$('memoryGrid').appendChild(b)})}
+function flipCard(b){if(lockMemory||b.classList.contains('matched')||b.classList.contains('open'))return;b.classList.add('open');b.textContent=b.dataset.symbol;opened.push(b);if(opened.length===2){if(opened[0].dataset.symbol===opened[1].dataset.symbol){opened.forEach(x=>x.classList.add('matched'));matched+=2;addScore(4);opened=[];$('memoryFeedback').textContent=`عاش! لقيتي ${matched/2} من ٤ أزواج 💜`;if(matched===8){$('finishMemory').disabled=false;$('memoryFeedback').textContent='كل الأزواج اتجمعت! افتحي الرسالة السرية 🌹'}}else{lockMemory=true;setTimeout(()=>{opened.forEach(x=>{x.classList.remove('open');x.textContent='❔'});opened=[];lockMemory=false},700)}}}
+$('resetMemory').onclick=setupMemory;$('finishMemory').onclick=()=>{unlock(4);showStage(5)};
+document.querySelectorAll('[data-stage]').forEach(b=>b.onclick=()=>{const s=Number(b.dataset.stage);if(s===1||completed.has(s-1)||completed.has(s)){showStage(s)}else toast('كمّلي المرحلة اللي قبلها الأول يا شوشو 💜')});
+$('changeMessage').onclick=()=>{let next=$('dailyMessage').dataset.index?Number($('dailyMessage').dataset.index)+1:1;next%=messages.length;$('dailyMessage').dataset.index=next;$('dailyMessage').textContent=messages[next];toast('رسالة جديدة مخصوص ليكي 💌')};
+function petals(count=16){if(!petalsOn)return;for(let i=0;i<count;i++){const p=document.createElement('div');p.className='petal';p.textContent=['🌸','💜','🌹','✨'][Math.floor(Math.random()*4)];p.style.left=Math.random()*100+'vw';p.style.animationDuration=(4+Math.random()*5)+'s';p.style.animationDelay=(Math.random()*1.4)+'s';p.style.fontSize=(15+Math.random()*18)+'px';document.body.appendChild(p);setTimeout(()=>p.remove(),11000)}}
+$('makePetals').onclick=()=>{petals(30);toast('الورد نازل مخصوص لشوشو 🌹')};$('petalBtn').onclick=()=>{petalsOn=!petalsOn;$('petalBtn').textContent='🌸 الورد: '+(petalsOn?'شغّال':'متوقف');if(petalsOn)petals(14)};
+$('surpriseBtn').onclick=()=>{$('lastSecret').classList.remove('hidden');petals(45);toast('المفاجأة الأخيرة ظهرت 💜')};
+$('restartBtn').onclick=()=>{score=0;roses=0;completed.clear();$('score').textContent='0';$('roses').textContent='0';updateProgress();showStage(0);$('playHeading').textContent='ابدئي من هنا يا شوشو';$('playSub').textContent='اختاري أول مرحلة من مملكة شوشو';$('lastSecret').classList.add('hidden');toast('رجعنا لبداية المغامرة! 🎮')};
+for(let i=0;i<65;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.width=s.style.height=(1+Math.random()*3)+'px';s.style.animationDelay=Math.random()*3+'s';$('stars').appendChild(s)}
+setInterval(()=>{if(petalsOn&&Math.random()>.45)petals(1)},2600);
+updateProgress();
+})();
+</script>
+</body>
+</html>
